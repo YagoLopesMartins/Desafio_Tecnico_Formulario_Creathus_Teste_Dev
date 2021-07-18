@@ -6,18 +6,7 @@ const database = require('./database/db');
 const matriculaModel = require('./models/MatriculaModel');
 
 const app = express();
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-  });
-
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+//const upload = multer({ dest: 'uploads/' });
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -38,6 +27,18 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
+
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
 
 (async () => {
     const database = require('./database/db');
@@ -65,11 +66,12 @@ const upload = multer({ storage });
 app.get('/', (req, res) => {
     res.render('home');
 });
+   
+
 
 app.get('/cadastro', function (req, res) {
     res.render('formulario');
 });
-
 app.get('/list', async (req, res) => {
     const matriculas = await matriculaModel.findAll();
     console.log(matriculas);
@@ -88,6 +90,7 @@ app.post('/cadastro',  upload.single('foto'), async(req, res) => {
     })
     res.json({ nome, idade, email, escolaridade });
 });
+
 
 
 app.listen(3003, () => console.log('Server is running!'));
