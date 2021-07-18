@@ -1,0 +1,22 @@
+<a href="/">HOME</a>
+
+<form action="/cadastro" method="POST" enctype="multipart/form-data">
+    <p>Nome:     
+        <input type="text" name="nome" min="5">
+    </p>
+    <p>Idade: <input type="number" name="idade"> </p>
+    <p>E-mail: <input type="email" name="email"></p>
+    <p>Foto: <input type="file" name="foto"></p>
+    <br/>
+    <label for="escolaridade">Escolaridade:</label>
+    <select name="escolaridade" id="esc">
+        <option value="pos-graduado">Pós Graduado</option>
+        <option value="graduado">Graduado</option>
+        <option value="nivel-medio">Nível médio</option>
+        <option value="nivel-tecnico">Nível técnico</option>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    </select>
+    <br/>
+    <br/>
+    <button type="submit">Salvar Matricula</button>
+</form>
+
