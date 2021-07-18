@@ -15,11 +15,19 @@
  - Nodejs instalado
  - Opcional: gerenciador de bancos de dados (Ex.: Beekeeper)
 
+## Tecnologias utilizadas
+
+ - Nodejs (servidor)
+ - Express (rotas e http)
+ - Handlebars (linguagem de template para views)
+ - Banco de dados SQLITE com sequelize
+ - Multer (para arquivos)
+
 ## Como executar
 
   - Git clone ou baixe o zip
   - no terminal executar npm i ou npm install
   - depois executar: npm run dev
 
-##
+## Bom testes
 
