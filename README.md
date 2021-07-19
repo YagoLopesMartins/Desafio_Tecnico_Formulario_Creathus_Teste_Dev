@@ -28,6 +28,7 @@
   - Git clone ou baixe o zip
   - no terminal executar npm i ou npm install
   - depois executar: npm run dev
+  - acessar por um navegador de internet a url: http://localhost:3003
 
-## Bom testes
+## Bom testes :)
 
